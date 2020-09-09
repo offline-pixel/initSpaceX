@@ -76,7 +76,7 @@ export class SpacexlpComponent implements OnInit {
   spaceXInit(): void {
     this.data = null;
     if ( !this.apiData ) {
-      this.router.navigate([], { relativeTo: this.route, queryParams: null });
+      this.router.navigate([], { relativeTo: this.route, queryParams: null, skipLocationChange: true,  queryParamsHandling: 'merge' });
       this._space.spaceX().subscribe((event: HttpEvent<any>) => {
         let _api = this._space.HttpEventResponse(event);
         if ( event.type === 4 ) {

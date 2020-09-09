@@ -22,6 +22,20 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+
+## Lighthouse benchmark
+### Heroku only
+![Lighthouse test on heroku](https://github.com/offline-pixel/initSpaceX/heroku-bc.png)
+The test performance is quite low and this can be due to two reasons:
+1. Node.js boilerplate is used. and,
+2. Heroku may have issues in free plans.
+
+## Observations
+1. Content-Length has to be set, otherwise, there's no way to the request to be measured
+2. Only api is hit once to reduce n/w requests
+3. SCSS is used with mobile first approach
+4. Refracting can be done at anytime depending upon what we really want to achieve on or above benchmarks.
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -25,7 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Lighthouse benchmark
 ### Heroku only
-![Lighthouse test on heroku](https://github.com/offline-pixel/initSpaceX/heroku-bc.png)
+![Lighthouse test on heroku](https://github.com/offline-pixel/initSpaceX/blob/master/heroku-bc.png)
 The test performance is quite low and this can be due to two reasons:
 1. Node.js boilerplate is used. and,
 2. Heroku may have issues in free plans.

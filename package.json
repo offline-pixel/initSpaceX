@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node dist/server/main.js",
+    "start": "node dist/initSpaceX/server/main.js",
     "start:heroku": "node dist/server",
     "postinstall": "npm run build:ssr",
     "build": "ng build",

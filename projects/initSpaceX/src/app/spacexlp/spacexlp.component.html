@@ -1,0 +1,60 @@
+<div class="wrapper">
+    <h1>SpaceX Launch Programs</h1>
+    <div class="content">
+        <!-- 1st component-->
+        <div class="filters-area">
+            <h4>Filters</h4>
+            <div class="category">
+                <p>Launch Year</p>
+                <div class="filters">
+                    <span
+                        *ngFor="let data of years"
+                        (click)=grabYear(data)
+                        [ngClass]="{'picked': data.i}"
+                    >{{data.year}}</span>
+                </div>
+            </div>
+            <div class="category">
+                <p>Successful Launch</p>
+                <div class="filters">
+                    <span (click)=grabLaunch(true) [ngClass]="{'picked': this.qp.lc == true}">True</span>
+                    <span (click)=grabLaunch(false) [ngClass]="{'picked': this.qp.lc == false}">False</span>
+                </div>
+            </div>
+            <div class="category">
+                <p>Successful Landing</p>
+                <div class="filters">
+                    <span (click)=grabLanding(true) [ngClass]="{'picked': this.qp.ld == true}">True</span>
+                    <span (click)=grabLanding(false) [ngClass]="{'picked': this.qp.ld == false}">False</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="api-data">1</div> -->
+        <!-- 2nd component-->
+        <div class="api-data">
+            <div class="product" *ngIf="loading">...loading</div>
+            <div class="product" *ngFor="let row of data">
+                <div class="area">
+                    <div class="top">
+                        <img *ngIf="row?.links?.mission_patch_small" src="{{row?.links?.mission_patch_small}}" alt="" />
+                        <img *ngIf="!row?.links?.mission_patch_small" src="../../assets/deepak_ranolia.jpg" alt="" />
+                    </div>
+                    <div class="bottom">
+                        <h4>{{row?.mission_name}}</h4>
+                        <!--Mission_id format not known... Received Empty Array-->
+                        <div>
+                            <b>Mission Ids: </b>
+                            <ul>
+                                <li *ngFor="let ids of row?.mission_id">{{ids}}</li>
+                            </ul>
+                        </div>
+                        <p><b>Launch Year: </b>{{row?.launch_year}}</p>
+                        <p><b>Successful Launch: </b>{{row?.launch_success}}</p>
+                        <p><b>Successful Landing: </b>{{row?.landing_key}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

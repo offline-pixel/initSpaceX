@@ -2,5 +2,182 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "initSpaceX": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/initSpaceX",
+      "sourceRoot": "projects/initSpaceX/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/initSpaceX/browser",
+            "index": "projects/initSpaceX/src/index.html",
+            "main": "projects/initSpaceX/src/main.ts",
+            "polyfills": "projects/initSpaceX/src/polyfills.ts",
+            "tsConfig": "projects/initSpaceX/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/initSpaceX/src/favicon.ico",
+              "projects/initSpaceX/src/assets",
+              "projects/initSpaceX/src/manifest.webmanifest"
+            ],
+            "styles": [
+              "projects/initSpaceX/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/initSpaceX/src/environments/environment.ts",
+                  "with": "projects/initSpaceX/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "projects/initSpaceX/ngsw-config.json"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "initSpaceX:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "initSpaceX:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "initSpaceX:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/initSpaceX/src/test.ts",
+            "polyfills": "projects/initSpaceX/src/polyfills.ts",
+            "tsConfig": "projects/initSpaceX/tsconfig.spec.json",
+            "karmaConfig": "projects/initSpaceX/karma.conf.js",
+            "assets": [
+              "projects/initSpaceX/src/favicon.ico",
+              "projects/initSpaceX/src/assets",
+              "projects/initSpaceX/src/manifest.webmanifest"
+            ],
+            "styles": [
+              "projects/initSpaceX/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/initSpaceX/tsconfig.app.json",
+              "projects/initSpaceX/tsconfig.spec.json",
+              "projects/initSpaceX/e2e/tsconfig.json",
+              "projects/initSpaceX/tsconfig.server.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/initSpaceX/e2e/protractor.conf.js",
+            "devServerTarget": "initSpaceX:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "initSpaceX:serve:production"
+            }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/initSpaceX/server",
+            "main": "projects/initSpaceX/server.ts",
+            "tsConfig": "projects/initSpaceX/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "projects/initSpaceX/src/environments/environment.ts",
+                  "with": "projects/initSpaceX/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "initSpaceX:build",
+            "serverTarget": "initSpaceX:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "initSpaceX:build:production",
+              "serverTarget": "initSpaceX:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "initSpaceX:build:production",
+            "serverTarget": "initSpaceX:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": false
+  },
+  "defaultProject": "initSpaceX"
 }

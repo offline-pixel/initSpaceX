@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0 15px 70px;
+    // width: 100%;
+    // overflow: hidden;
+    background: #f0f0f0;
+    & h1 {
+        margin:  0 0 5px;
+    }
+    & .fixed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9;
+        text-align: center;
+        background: #f0f0f0;
+        box-shadow: 0px 0px 7px #ccc;
+        & a {
+            color: deepskyblue;
+            text-decoration: none;
+            &:hover, &:visited {
+                color: deepskyblue;
+            }
+        }
+    }
+}

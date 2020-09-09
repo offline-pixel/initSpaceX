@@ -1,0 +1,168 @@
+.filters-area {
+    background: #fff;
+    box-shadow: 0 0 5px #d2d2d2;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    & h4 {
+        margin: 0;
+    }
+    & .category {
+        & p {
+            text-align: center;
+            margin: 15px 10% 0px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+            display: inline-block;
+            width: 80%;
+        }
+        & .filters {
+            padding: 5px 10px;
+            & span {
+                transition: all 150ms ease-in-out 20ms;
+                cursor: pointer;
+                background: #cee09b;
+                border-radius: 4px;
+                width: 32%;
+                margin: 5px 2px;
+                padding: 4px 12px;
+                text-align: center;
+                float: left;
+                &.picked {
+                    background: #7cb900;
+                }
+                &:hover {
+                    transition: all 150ms ease-in-out 20ms;
+                    box-shadow: 1px 1px 10px #ccc;
+                }
+            }
+            & span:nth-child(even) {
+                float: right;
+            }
+        }
+    }
+}
+.api-data {
+    display: flex;
+    flex-direction: column;
+    & .product {
+        & .area {
+            background: #fff;
+            box-shadow: 0 0 5px #d2d2d2;
+            border-radius: 4px;
+            padding: 20px 20px 10px;
+            & .top {
+                overflow: hidden;
+                & img {
+                    min-width: 100%;
+                    max-width: 100%;
+                }
+            }
+            & .bottom {
+                & h4 {
+                    max-height: 16px;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    margin: 10px 0;
+                    color: #4a5487;
+                }
+                & div {
+                    font-size: 15px;
+                    margin: 0 0 8px;
+                    color: #4a5487;
+                    & b {
+                        color: #333;
+                    }
+                    & ul {
+                        margin: 0 0 5px;
+                        max-height: 16px;
+                        height: 16px;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+                }
+                & p {
+                    font-size: 15px;
+                    margin: 0 0 8px;
+                    color: #4a5487;
+                    & b {
+                        color: #333;
+                    }
+                }
+            }
+        }
+        margin-bottom: 15px;
+    }
+}
+@media screen and (min-width: 701px ) {
+    .wrapper {
+        margin: auto;
+    }
+    .content {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+    }
+    .filters-area {
+        min-width: 28%;
+        max-width: 28%;
+        & .category {
+            & .filters {
+                & span {
+                    width: 25%;
+                }
+            }
+        }
+    }
+    .api-data {
+        min-width: 69%;
+        max-width: 69%;
+        padding-left: 10px;
+        flex-flow: wrap;
+        & .product {
+            width: 45%;
+            padding: 0 10px;
+            & .area {
+                & .top {
+                    max-height: 210px;
+                    min-height: 210px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px ) {
+    .filters-area {
+        min-width: 14%;
+        max-width: 14%;
+    }
+    .api-data {
+        min-width: 83%;
+        max-width: 83%;
+        padding-left: 10px;
+        flex-flow: wrap;
+        & .product {
+            width: 22.5%;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .wrapper {
+        min-width: 1440px;
+        max-width: 1440px;
+    }
+    .content {
+        max-width: 1440px;
+        min-width: 1440px;
+    }
+}

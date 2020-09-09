@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng server/main.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -12,6 +12,10 @@
     "serve:ssr": "node dist/initSpaceX/server/main.js",
     "build:ssr": "ng build --prod && ng run initSpaceX:server:production",
     "prerender": "ng run initSpaceX:prerender"
+  },
+  "engines": {
+    "node": "10.19.0",
+    "npm": "6.14.4"
   },
   "private": true,
   "dependencies": {

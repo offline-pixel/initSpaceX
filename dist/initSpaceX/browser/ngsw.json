@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1599676168225,
+  "timestamp": 1599767604863,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "/4.7abac2b9b73c68681cff.js",
+        "/4.9bea3c590280faebe016.js",
         "/favicon.ico",
         "/index.html",
-        "/main.f53274d1e1b9c31bdf56.js",
+        "/main.d7bb1b80413622220e54.js",
         "/manifest.webmanifest",
         "/polyfills.9e86b32c42185429d576.js",
-        "/runtime.7778059e351ee5a5f918.js",
+        "/runtime.1646c5312b743cb0265b.js",
         "/styles.a287ad01d939aa3eb8b3.css"
       ],
       "patterns": []
@@ -46,7 +46,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/4.7abac2b9b73c68681cff.js": "2e66552a5776c03020581bf32938088cdc5a29fb",
+    "/4.9bea3c590280faebe016.js": "80b429a11eec33dabbebebde424e178950e7e9e7",
     "/assets/color-pick.png": "2ab49200f84769e54181f9cfd35e86a7b654d0c4",
     "/assets/deepak_ranolia.jpg": "2406067328ad87c69afd7aca05021cf58435003b",
     "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
@@ -58,11 +58,11 @@
     "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "c7bd1a36a8de09158c067db7c969000731382f68",
-    "/main.f53274d1e1b9c31bdf56.js": "9e71b4991299f90ef9318c9287621709ac507508",
+    "/index.html": "5cab0ac13fb28061e21d340c9689fd62c7dcef70",
+    "/main.d7bb1b80413622220e54.js": "8edc4b5137a6ad8d93c0061ced946bd5a061b5c9",
     "/manifest.webmanifest": "66b3db5ff4e33907c629936953989b08fb5e04af",
     "/polyfills.9e86b32c42185429d576.js": "e22424fcafa710e96da276ea0421ed5dc7ac2ebd",
-    "/runtime.7778059e351ee5a5f918.js": "19e2d893a027e4dc596a8bb7d5398786d3e92f7e",
+    "/runtime.1646c5312b743cb0265b.js": "19ad18adc9573ec2b8e8d1bb5dd9a2166fb0e798",
     "/styles.a287ad01d939aa3eb8b3.css": "cfe621308d63708e703172d48f8efd6ecb20b532"
   },
   "navigationUrls": [

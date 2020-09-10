@@ -4,15 +4,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run dev:ssr` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `npm run build:ssr` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
 
@@ -25,16 +22,17 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Lighthouse benchmark
 ### Heroku only
-![Lighthouse test on heroku](https://github.com/offline-pixel/initSpaceX/blob/master/heroku-bc.png)
-The test performance is quite low and this can be due to two reasons:
+![Lighthouse test on heroku](https://github.com/offline-pixel/initSpaceX/blob/master/lighthouse/incognito-1.png)
+The test performance is quite low as all of the code is initiated on main thread and also, this can be due to:
 1. Node.js boilerplate is used. and,
 2. Heroku may have issues in free plans.
 
+They all blocks the thread for a second or two in total.
+
 ## Observations
-1. Content-Length has to be set, otherwise, there's no way to the request to be measured
+1. Content-Length has to be set, otherwise, there's no way a request can be measured
 2. Only api is hit once to reduce n/w requests
-3. SCSS is used with mobile first approach
-4. Refracting can be done at anytime depending upon what we really want to achieve on or above benchmarks.
+3. SCSS is used with mobile first approach and design is converted with a naked eye(means without using any tools)
 
 ## Further help
 

@@ -32,13 +32,13 @@
 
         <!-- <div class="api-data">1</div> -->
         <!-- 2nd component-->
-        <div class="api-data">
-            <div class="product" *ngIf="loading">...loading</div>
+        <div class="api-data" *ngIf="!loading">
+            <!-- <div class="product" *ngIf="loading">...loading</div> -->
             <div class="product" *ngFor="let row of data">
                 <div class="area">
                     <div class="top">
-                        <img *ngIf="row?.links?.mission_patch_small" src="{{row?.links?.mission_patch_small}}" alt="" />
                         <img *ngIf="!row?.links?.mission_patch_small" src="../../assets/deepak_ranolia.jpg" alt="" />
+                        <img *ngIf="row?.links?.mission_patch_small" src="{{row?.links?.mission_patch_small}}" alt="" />
                     </div>
                     <div class="bottom">
                         <h4>{{row?.mission_name}}</h4>
@@ -55,6 +55,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="api-data" *ngIf="loading">
+            <div class="product">...loading</div>
         </div>
     </div>
 </div>
